@@ -28,26 +28,22 @@
     - From vscode terminal, execute `pip instal -r pip_installs.txt`
 
 **_Install appropriate webdrivers_**
-Download links for your webdrivers:
-    | Browser  | Link                                                                   |
-    | -------- | ---------------------------------------------------------------------- |
-    | Chrome:  | https://chromedriver.chromium.org/downloads                            |
-    | Firefox: | https://github.com/mozilla/geckodriver/releases                        |
-    | Edge:    | https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/  |
+    Download links for your webdrivers
+    - Chrome `https://chromedriver.chromium.org/downloads`
+    - Firefox `https://github.com/mozilla/geckodriver/releases`
+    - Edge `https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ `
 
 **_Test execution from vscode terminal_**
     - `behave features/login.feature`
 
-## Allure Reports 
-    ** Pre-requisite **
+**_Allure Reports_**
     Install Allure
+        Execute the following commands:
         - `Set-ExecutionPolicy RemoteSigned -scope CurrentUser`
         - `iwr -useb get.scoop.sh | iex`
         - `scoop install allure`
-    
-    ** Generate Report **
-    Execute test and generate report files (.json) on `reports/` directory
-        `behave -f allur_behave.formatter:AllureFormatter -o reports/ feature/login.feature`
-
+    Generate Report
+        - Execute test and generate report files (.json) on `reports/` directory
+        - `behave -f allur_behave.formatter:AllureFormatter -o reports/ feature/login.feature`
     Generate Allure report
-        `allure serve reports/`
+        - `allure serve reports/`
