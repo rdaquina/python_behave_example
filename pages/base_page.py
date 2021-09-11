@@ -23,11 +23,11 @@ class BasePage(object):
         else:
             raise Exception("Data is None")
 
-    def locate_element(self, context, locator):
+    def locate_element(context, locator):
         try:
-            return WebDriverWait(context.browser, 120).until(EC.presence_of_element_located(locator.locator_type, locator.selector))
+            return WebDriverWait(context.browser, 20).until(EC.presence_of_element_located((locator.locator_type, locator.selector)))
         except TimeoutException:
             raise Exception("The element could not be found")
 
-    def get_element(self, context, locator):
+    def get_element(context, locator):
         return context.browser.find_element(locator.locator_type, locator.selector)

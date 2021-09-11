@@ -1,4 +1,4 @@
-import os
+import os, sys
 import datetime
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
@@ -46,7 +46,4 @@ def before_scenario(context, scenario):
     context.browser.get(settings.portal_url)
 
 def after_scenario(context, scenario):
-    try:
-        context.browser.close()
-    except:
-        raise Exception("Browser failed to start")
+    context.browser.close()

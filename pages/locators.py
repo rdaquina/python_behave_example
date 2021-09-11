@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 class Locator:
-    def __init__(self,locator_type, selector) -> None:
+    def __init__(self, locator_type, selector):
         self.locator_type = locator_type
         self.selector = selector
 
@@ -10,7 +10,7 @@ class HomePageLocators:
     title = Locator(By.XPATH,"//*[@id=\"title\"]")
     load_delay = Locator(By.XPATH, "//*[@id=\"overview\"]/div/div[1]/div[4]/h3/a")
     click = Locator(By.XPATH, "//*[@id=\"overview\"]/div/div[2]/div[3]/h3/a")
-    text_input = Locator(By.XPATH,"//*[@id=\"overview\"]/div/div[2]/div[3]/h3/a")
+    text_input = Locator(By.XPATH,"//*[@id=\"overview\"]/div/div[2]/div[4]/h3/a")
     verify_text = Locator(By.XPATH,"//*[@id=\"overview\"]/div/div[3]/div[3]/h3/a")
     progress_bar = Locator(By.XPATH, "//*[@id=\"overview\"]/div/div[3]/div[4]/h3/a")
 
@@ -23,6 +23,7 @@ class LoadDelayPageLocators:
 class ClickPageLocators:
     ClickPageTitle = Locator(By.XPATH,"/html/body/section/div/h3")
     ClickPageButton = Locator(By.ID,"badButton")
+    ClickPageButtonSuccess = Locator(By.CLASS_NAME,"btn-success")
 
 """Text Input page element locators"""
 class TextInputLocators:
@@ -30,14 +31,10 @@ class TextInputLocators:
     TextInputField = Locator(By.ID,"newButtonName")
     TextInputButton = Locator(By.ID,"updatingButton")
 
-"""Verify Text page element locators"""
-class VerifyTextLocators:
-    VerifyTextTitle = Locator(By.XPATH,"/html/body/section/div/h3")
-
 """Progress Bar page element locators"""
 class ProgressBarLocators:
     ProgressBarTitle = Locator(By.XPATH,"/html/body/section/div/h3")
     ProgressBarStartButton = Locator(By.ID,"startButton")
     ProgressBarStopButton = Locator(By.ID,"stopButton")
     ProgressBarProgressBar = Locator(By.ID,"progressBar")
-    ProgressBarProgressBar = Locator(By.ID,"result")
+    ProgressBarResult = Locator(By.ID,"result")
